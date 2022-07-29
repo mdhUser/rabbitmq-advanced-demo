@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @email: maodihui@foxmail.com
  * @date: 2022/6/10 10:08
  */
-//@Configuration
+@Configuration
 public class DirectConfig {
 
     @Bean

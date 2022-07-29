@@ -17,7 +17,6 @@ public class CommonConfig implements ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         RabbitTemplate rabbitTemplate = applicationContext.getBean(RabbitTemplate.class);
         rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> {
-
             Integer delay = message.getMessageProperties().getReceivedDelay();
             if (!ObjectUtils.isEmpty(delay)) {
                 log.info("接受到延迟消息的信息");
